@@ -1,6 +1,6 @@
 # code
 
-> A Vue.js project (http://kmgtportfolio.zzz.com.ua)
+> A Vue.js project (https://kmgtportfolio.now.sh/)
 
 ## Build Setup
 
