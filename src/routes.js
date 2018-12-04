@@ -4,7 +4,6 @@ import Resume from './components/Resume.vue';
 import Services from './components/Services.vue';
 import Portfolio from './components/Portfolio.vue';
 import SinglePortfolio from './components/SinglePortfolio.vue';
-import Blog from './components/Blog.vue';
 import Contact from './components/Contact.vue';
 
 export const routes = [

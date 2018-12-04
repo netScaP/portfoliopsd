@@ -114,4 +114,11 @@
 				padding: 0px
 				.title-img
 					transform: scale(0.5)
+			.line-comp
+				.parts
+					.part
+						border-left: 0px
+						padding: 0px
+						.circle
+							display: none
 </style>

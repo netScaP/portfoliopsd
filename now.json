@@ -1,0 +1,16 @@
+{
+  "name": "my-example-app",
+  "type": "static",
+  "static": {
+    "public": "dist",
+    "renderSingle": true,
+    "directoryListing": [
+      "/dist/**"
+    ]
+  },
+  "alias": "kmgtportfolio",
+  "files": [
+    "dist",
+    "index.html"
+  ]
+}

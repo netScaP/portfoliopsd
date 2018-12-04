@@ -124,7 +124,7 @@
 					margin-top: 40px
 					button
 						font-size: 14px
-						font-family: "TypoPRO Montserrat"
+						font-family: "TypoPRO Montserrat", sans-serif
 						font-weight: bold
 						color: rgb(53, 55, 62)
 						text-transform: uppercase
@@ -168,11 +168,17 @@
 					width: 48%
 	@media(max-width: 500px)
 		.about
-			// padding: 50px 5%
+			padding: 50px
 		.skills
+			padding: 50px
 			.bars
 				flex-wrap: wrap
 				.left-b,
 				.right-b
 					width: 100%
+		.feedback
+			padding: 50px
+			.main
+				width: 100%
+				margin-left: 0px
 </style>

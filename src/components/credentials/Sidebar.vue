@@ -5,7 +5,7 @@
 			.name
 				p Jonathon Doe
 		.menu
-			router-link(to="/", tag="div")
+			router-link(to="/", tag="div", exact)
 				img.homeImg(src="../../assets/img/menu/home.png")
 				p Home
 			router-link(to="/about", tag="div")
@@ -24,11 +24,9 @@
 				img(src="../../assets/img/menu/contact.png")
 				p Contact
 		.social
-			.facebook
-			.twitter
-			.google
-			.linkedin
-			.circle
+			a(href="https://vk.com/alishkeee").vk
+			a(href="https://github.com/netScaP").github
+			a(href="https://twitter.com").twitter
 </template>
 
 <script>
@@ -41,7 +39,7 @@
 	$transit: all 0.3s linear
 	::-webkit-scrollbar
 		width: 0px
-	.router-link-exact-active
+	.router-link-active
 		border-bottom: 1px solid white !important
 	.sidebar
 		height: 100%
@@ -87,28 +85,30 @@
 			text-align: center
 			margin-top: auto
 			margin-bottom: 20px
-			div
-				width: 17px
+			a
+				width: 15px
 				height: 15px
 				background-repeat: no-repeat
 				cursor: pointer
-				margin-right: 2px
+				margin-right: 15px
+				filter: brightness(0) invert(1)
 				&:hover
-					filter: brightness(0) invert(1)
-			.facebook
-				background: url('../../assets/img/social/all.png') 0px 0
+					filter: brightness(1) invert(0)
+			.vk
+				background: url('../../assets/img/social/css_sprites.png') -5px -5px no-repeat
+				margin-left: 15px
+			.github
+				background: url('../../assets/img/social/css_sprites.png') -30px -5px no-repeat
 			.twitter
-				background: url('../../assets/img/social/all.png') -23px 0
-			.google
-				background: url('../../assets/img/social/all.png') -46px 0
-			.linkedin
-				background: url('../../assets/img/social/all.png') -69px 0
-			.circle
-				background: url('../../assets/img/social/all.png') -92px 0
+				background: url('../../assets/img/social/css_sprites.png') -55px -5px no-repeat
 	@media(max-height: 850px)
 		.sidebar
 			.menu
 				div
 					img
 						display: none
+	@media(max-width: 500px)
+		.sidebar
+			.social
+				padding-top: 20px
 </style>

@@ -89,7 +89,7 @@
 					textarea
 						width: 100%
 						padding: 15px
-						font-family: 'TypoPRO Montserrat'
+						font-family: 'TypoPRO Montserrat', sans-serif
 						resize: vertical
 					input, textarea
 						border: 1px solid rgb(234, 234, 234)

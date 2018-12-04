@@ -6,7 +6,7 @@
 				.work(:key="$route.params.id")
 					.description
 						.main
-							p.work-name {{ work.name }}
+							a.work-name(:href="work.url", target="_blank") {{ work.name }}
 							p.work-summary {{ work.summary }}
 						.details
 							p.project-detail Project Details
@@ -90,6 +90,8 @@
 		// ANIMATION END
 		@extend %padding-section
 		.work
+			text-decoration: none
+			color: black
 			padding-top: 50px
 			display: flex
 			.description
@@ -98,7 +100,9 @@
 				flex-direction: column
 				justify-content: space-between
 				.main
+					margin-top: 30px
 					.work-name
+						color: black
 						font-size: 30px
 						text-transform: uppercase
 					.work-summary
@@ -161,7 +165,7 @@
 						transform: rotateY(180deg)
 						p
 							transform: rotateY(180deg)
-	@media(max-width: 1024px)
+	@media(max-width: 1300px)
 		#single
 			.work
 				flex-direction: column
@@ -171,4 +175,7 @@
 					width: 100%
 					order: -1
 					padding-left: 0px
+	@media(max-width: 500px)
+		#single
+			padding: 50px
 </style>

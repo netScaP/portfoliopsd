@@ -120,4 +120,8 @@
 		.gallery
 			.work
 				width: 100%
+	@media(max-width: 500px)
+		nav
+			ul
+				justify-content: center
 </style>

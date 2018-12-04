@@ -61,7 +61,7 @@
 	body
 		padding: 0px
 		margin: 0px
-		font-family: 'TypoPRO Montserrat'
+		font-family: 'TypoPRO Montserrat', sans-serif
 	#app
 		width: 100%
 		display: flex

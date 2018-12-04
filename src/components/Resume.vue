@@ -88,4 +88,7 @@
 				.line
 					width: 100%
 					margin-bottom: 50px
+	@media(max-width: 500px)
+		.resume
+			padding: 50px
 </style>

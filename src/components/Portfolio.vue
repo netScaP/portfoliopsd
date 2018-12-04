@@ -29,4 +29,8 @@
 
 	.portfolio
 		@extend %padding-section
+
+	@media(max-width: 500px)
+		.portfolio
+			padding: 50px
 </style>

@@ -274,4 +274,17 @@
 				.right-process, .left-process
 					width: 45%
 					text-align: left
+	@media(max-width: 500px)
+		.service, .funfacts, .workprocess
+			padding: 50px
+		.service
+			.services
+				.single-service
+					padding-right: 0px
+		.workprocess
+			.processes
+				flex-wrap: wrap
+				.left-process, .right-process
+					width: 100%
+					text-align: center
 </style>
