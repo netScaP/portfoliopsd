@@ -129,9 +129,20 @@
 						margin: 0px
 	@media(max-width: 1024px)
 		#contact
+			padding: 50px 10%
 			.contact-info
 				.wrapper
 					form
 						input
 							width: 100%
+	@media(max-width: 500px)
+		#contact
+			.contact-info
+				.wrapper
+					form, .my-info
+						width: 100%
+					form
+						margin-bottom: 50px
+					.my-info
+						margin-left: 0px
 </style>

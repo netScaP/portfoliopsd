@@ -108,4 +108,10 @@
 						background-color: rgb(54, 44, 178)
 					.circle-transition
 						transition: margin-top 0.3s linear
+	@media(max-width: 500px)
+		.main
+			.title
+				padding: 0px
+				.title-img
+					transform: scale(0.5)
 </style>

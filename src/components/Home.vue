@@ -20,15 +20,22 @@
 		flex-direction: column
 		.hello
 			color: rgba(53, 55, 62, 0.102)
-			font-size: 220px
+			font-size: 15em
 			font-weight: bold
 			margin-bottom: 0px
 			margin-top: -100px
 		.whoami
-			font-size: 49px
+			font-size: 3em
 			color: rgb(53, 55, 62)
 			font-weight: bold
 			text-transform: uppercase
 			margin: 0px
 			margin-top: -50px
+	@media(max-width: 750px)
+		div
+			.hello
+				font-size: 5em
+			.whoami
+				margin-top: -20px
+				font-size: 1em
 </style>

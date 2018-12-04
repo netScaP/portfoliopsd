@@ -166,4 +166,13 @@
 			.bars
 				.left-b, .right-b
 					width: 48%
+	@media(max-width: 500px)
+		.about
+			// padding: 50px 5%
+		.skills
+			.bars
+				flex-wrap: wrap
+				.left-b,
+				.right-b
+					width: 100%
 </style>

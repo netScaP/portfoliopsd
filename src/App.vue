@@ -1,13 +1,13 @@
 <template lang="pug">
 	#app
-		aside
+		aside(:class="{ leftSide: !widthSt1000, rightSide: widthSt1000 }")
 			transition(name="menu-slide", mode="out-in")
 				app-sidebar(v-show="menuIsOpen")
 			div.burger(v-if="widthSt1000", :class="{ change: menuIsOpen }", @click="menuIsOpen = !menuIsOpen;")
 				div.bar.bar1
 				div.bar.bar2
 				div.bar.bar3
-		section.view(:class="{ widthClass: !menuIsOpen }")
+		section.view(:class="{ widthClass: widthSt1000 && menuIsOpen, leftView: !widthSt1000, rightView: widthSt1000 }")
 			transition(name="fade", mode="out-in")
 				router-view.router-view-class
 			footer
@@ -25,19 +25,24 @@
 				widthSt1000: false
 			}
 		},
+		methods: {
+			checkWidth() {
+				if (window.innerWidth < 1000) {
+					this.menuIsOpen = false;
+					this.widthSt1000 = true;
+				}
+			}
+		},
 		components: {
 			appSidebar: Sidebar
 		},
 		watch: {
 			$route (to, from) {
-				this.menuIsOpen = false;
+				this.checkWidth();
 			}
 		},
 		created() {
-			if (window.innerWidth < 1000) {
-				this.menuIsOpen = false;
-				this.widthSt1000 = true;
-			}
+			this.checkWidth();
 		}
 	}
 </script>
@@ -50,7 +55,7 @@
 		transition: all .5s ease
 	.menu-slide-enter,
 	.menu-slide-leave-to
-		transform: translateX(-100px)
+		transform: translateX(100px)
 		opacity: 0
 	
 	body
@@ -63,10 +68,12 @@
 		flex-direction: column-reverse
 		.burger
 			position: fixed
-			top: 0px
+			top: 5px
+			right: 5px
 			z-index: 1001
 			display: inline-block
 			cursor: pointer
+			transform: scale(0.8)
 			.bar
 				width: 35px
 				height: 5px
@@ -74,20 +81,24 @@
 				margin: 6px 0px
 				transition: 0.4s
 		.change
+			border: 1px solid white
+			background-color: rgba(255, 255, 255, 0.5)
 			.bar1
-				transform: rotate(-45deg) translate(-9px, 6px)
+				transform: rotate(-45deg) translate(-8px, 6px)
 			.bar2
 				opacity: 0
 			.bar3
-				transform: rotate(45deg) translate(-8px, -8px)
+				transform: rotate(45deg) translate(-9px, -8px)
 		aside
 			width: 150px
-			font-size: 1em
 			height: 100vh
 			z-index: 1000
 			position: fixed
-			left: 0
 			top: 0
+		.leftSide
+			left: 0
+		.rightSide
+			right: 0
 		.view
 			margin-left: 150px
 			width: calc(100% - 150px)
@@ -106,17 +117,30 @@
 			.fade-enter,
 			.fade-leave-active
 				opacity: 0
-				position: abosulte
+				// position: abosulte
 				margin-left: -5%
 		.widthClass
-			margin-left: 0px !important
-			width: 100% !important
+			width: calc(100% - 200px) !important
+			margin-right: 200px
+			margin-left: 0px
 	@media (max-width: 1000px)
 		#app
 			aside
 				width: 200px
-				font-size: 1.5em
 			.view
-				margin-left: 200px
-				width: calc(100% - 200px)
+				margin-left: 0px
+				width: 100%
+	@media(max-width: 600px)
+		#app
+			aside
+				width: 100%
+				height: auto
+				position: relative
+			.widthClass
+				width: 0px !important
+				height: 0px
+				display: none
+				transition: width .5s ease, height .5s ease, display .5s cubic-bezier(1, 0, 1, 0)
+		footer
+			font-size: 0.5em
 </style>

@@ -116,4 +116,8 @@
 				.client
 					color: rgb(47, 47, 47)
 					font-size: 14px
+	@media(max-width: 900px)
+		.gallery
+			.work
+				width: 100%
 </style>

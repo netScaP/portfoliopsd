@@ -181,6 +181,7 @@
 			justify-content: space-between
 			align-items: center
 			width: 25%
+			transform: scale(0.6)
 			img
 				width: 30px
 				height: 30px
@@ -265,4 +266,12 @@
 						height: 200px
 						p
 							font-size: 25px
+	@media(max-width: 900px)
+		.workprocess
+			.processes
+				.mid-process
+					display: none
+				.right-process, .left-process
+					width: 45%
+					text-align: left
 </style>
